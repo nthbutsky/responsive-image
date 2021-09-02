@@ -45,10 +45,12 @@ img {
   max-width: 720px;
 }
 
-/* OPTION FIVE */
+/* OPTION FIVE 
 
 <picture>
   <source media="(max-width: 799px)" srcset="elva-480w.jpg">
   <source media="(min-width: 800px)" srcset="elva-800w.jpg">
   <img src="elva-800w.jpg">
 </picture>
+
+*/
