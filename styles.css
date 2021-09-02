@@ -1,3 +1,30 @@
+/* 
+
+- Use background-image, if an image is not part of the content.
+- Use object-fit, if no need of IE support.
+- Use technique the wrappers and paddings used by Netflix.
+- In most cases just add height: auto.
+- If you need performance, use srcset for loading small images on small screen devices.
+
+*/
+
+/* OPTION ONE */
+
+.myImg {
+  background-image: url("my-image.png");
+  background-size: cover;
+}
+
+/* OPTION TWO */
+
+.myImg {
+  object-fit: cover;
+  width: 320px;
+  height: 180px;
+}
+
+/* OPTION THREE */
+
 .wrapper {
   position: relative;
   padding-top: 56.25%; /* 16:9 Aspect Ratio */
@@ -9,3 +36,19 @@ img {
   width: 100%;
   height: auto;
 }
+
+/* OPTION FOUR */
+
+img {
+  height: auto;
+  width: 100%;
+  max-width: 720px;
+}
+
+/* OPTION FIVE */
+
+<picture>
+  <source media="(max-width: 799px)" srcset="elva-480w.jpg">
+  <source media="(min-width: 800px)" srcset="elva-800w.jpg">
+  <img src="elva-800w.jpg">
+</picture>
